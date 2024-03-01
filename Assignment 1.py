@@ -74,6 +74,7 @@ class PupilManagementSystem:
 
     def modify_pupil_record(self):
         roll_number = input("Enter roll number to modify: ")
+        found = False
         for pupil in self.pupil_records:
             if pupil.roll_number == roll_number:
                 print("Name :", pupil.name)
@@ -104,7 +105,7 @@ class PupilManagementSystem:
                 while True:
                     choice = input("Wants to edit (y/n)?:")
                     if choice.lower() == 'y':
-                        pupil.Eng = input("Math marks: ")
+                        pupil.Math = input("Math marks: ")
                         continue
                     elif choice.lower() == 'n':
                         break
@@ -116,7 +117,7 @@ class PupilManagementSystem:
                 while True:
                     choice = input("Wants to edit (y/n)?:")
                     if choice.lower() == 'y':
-                        pupil.Eng = input("Physics marks: ")
+                        pupil.Phy = input("Physics marks: ")
                         continue
                     elif choice.lower() == 'n':
                         break
@@ -128,7 +129,7 @@ class PupilManagementSystem:
                 while True:
                     choice = input("Wants to edit (y/n)?:")
                     if choice.lower() == 'y':
-                        pupil.Eng = input("Chemistry marks: ")
+                        pupil.Che = input("Chemistry marks: ")
                         continue
                     elif choice.lower() == 'n':
                         break
@@ -140,7 +141,7 @@ class PupilManagementSystem:
                 while True:
                     choice = input("Wants to edit (y/n)?:")
                     if choice.lower() == 'y':
-                        pupil.Eng = input("CS marks: ")
+                        pupil.Cs = input("CS marks: ")
                         continue
                     elif choice.lower() == 'n':
                         break
@@ -149,6 +150,8 @@ class PupilManagementSystem:
                         continue
                 
                 print("Record updated!")
+                found = True
+                break
                 return
         print("Pupil not found.")
 
